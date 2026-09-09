@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasmania Family Trip — 24 Dec 2026 to 5 Jan 2027</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #EEF1EA;
+  --surface: #FFFFFF;
+  --ink: #1C2A22;
+  --ink-muted: #66766A;
+  --forest: #2F5233;
+  --forest-dark: #1E3823;
+  --amber: #A9762F;
+  --amber-soft: #F1E3C8;
+  --rust: #A3402F;
+  --rust-soft: #F3E0DB;
+  --line: #D7DECC;
+  --transit-line: #C6CDBC;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* HERO */
+.hero {
+  padding: 48px 20px 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero .kicker {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--amber);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hero h1 {
+  font-size: clamp(32px, 7vw, 44px);
+  line-height: 1.08;
+  color: var(--forest-dark);
+  font-optical-sizing: auto;
+}
+.hero .dates {
+  margin-top: 10px;
+  font-size: 17px;
+  color: var(--ink-muted);
+}
+.hero .lede {
+  margin-top: 18px;
+  font-size: 15px;
+  color: var(--ink-muted);
+  max-width: 52ch;
+}
+
+/* STICKY NAV */
+.day-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(238,241,234,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+}
+.day-nav-outer {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.day-nav-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 36px;
+  background: linear-gradient(to right, rgba(238,241,234,0), rgba(238,241,234,0.95));
+  pointer-events: none;
+}
+.day-nav-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 20px;
+  scrollbar-width: none;
+}
+.day-nav-scroll::-webkit-scrollbar { display: none; }
+.day-pill {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  min-width: 54px;
+}
+.day-pill:hover, .day-pill:focus-visible {
+  border-color: var(--forest);
+  outline: none;
+}
+.pill-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--forest-dark);
+}
+.pill-date {
+  font-size: 10px;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+/* DAY SECTION */
+.day {
+  padding-top: 44px;
+  scroll-margin-top: 64px;
+}
+.day + .day {
+  border-top: 1px solid var(--line);
+}
+.day-head {
+  margin-bottom: 6px;
+}
+.day-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--forest);
+  background: var(--amber-soft);
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.day-head h2 {
+  font-size: 26px;
+  color: var(--forest-dark);
+  line-height: 1.15;
+}
+.day-theme {
+  font-size: 15px;
+  color: var(--ink-muted);
+  margin: 4px 0 0;
+}
+.day-subtitle {
+  font-size: 14px;
+  color: var(--ink-muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 16px 0 0;
+}
+
+/* TIMELINE */
+.timeline {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 92px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--line);
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 78px 20px 1fr;
+  align-items: start;
+  padding: 9px 0;
+  gap: 2px;
+}
+.tl-time {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+  padding-top: 2px;
+  text-align: right;
+  white-space: nowrap;
+}
+.tl-marker {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+.tl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--forest);
+  display: block;
+}
+.tl-content {
+  font-size: 15px;
+  padding-top: 1px;
+  padding-left: 4px;
+}
+.tl-content strong { color: var(--forest-dark); font-weight: 600; }
+
+.tl-transit .tl-dot { background: var(--transit-line); width: 6px; height: 6px; }
+.tl-transit .tl-content { color: var(--ink-muted); font-size: 14px; }
+.tl-transit .tl-time { color: #9AA396; }
+
+.tl-rest .tl-dot { background: transparent; border: 1.5px dashed var(--ink-muted); }
+.tl-rest .tl-content { color: var(--ink-muted); font-style: italic; }
+
+.tl-meal .tl-dot { background: var(--amber); width: 9px; height: 9px; }
+
+.tl-split .tl-dot { background: var(--rust); }
+.tl-split .tl-content { background: var(--rust-soft); border-radius: 8px; padding: 8px 10px; margin: -6px 0; }
+
+.flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--rust);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.boot {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--rust);
+  border: 1px solid var(--rust);
+  border-radius: 5px;
+  padding: 0px 5px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.day-note {
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  border-left: 2px solid var(--amber);
+  padding: 2px 0 2px 14px;
+  margin: 18px 0 0;
+}
+
+.callout {
+  background: var(--rust-soft);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 18px 0 0;
+  font-size: 14.5px;
+}
+.callout p { margin: 0; }
+
+/* FOOTER SECTIONS */
+.footer-section {
+  padding-top: 44px;
+  border-top: 1px solid var(--line);
+  margin-top: 44px;
+}
+.footer-section h3 {
+  font-size: 20px;
+  color: var(--forest-dark);
+  margin-bottom: 14px;
+}
+.footer-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.footer-section li {
+  font-size: 14.5px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.confirm-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-top: 14px;
+}
+
+footer.credit {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-muted);
+  padding: 40px 20px 10px;
+}
+
+@media (max-width: 420px) {
+  .tl-item { grid-template-columns: 64px 16px 1fr; }
+  .timeline::before { left: 74px; }
+  .tl-time { font-size: 11.5px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">Family Trip &middot; Tasmania</div>
+  <h1>Tasmania, hour by hour</h1>
+  <p class="dates">24 December 2026 &ndash; 5 January 2027</p>
+</div>
+
+<nav class="day-nav">
+  <div class="day-nav-outer">
+  <div class="day-nav-scroll">
+    <a href="#day-1" class="day-pill"><span class="pill-num">1</span><span class="pill-date">Thu 24 Dec 2026</span></a><a href="#day-2" class="day-pill"><span class="pill-num">2</span><span class="pill-date">Fri 25 Dec 2026</span></a><a href="#day-3" class="day-pill"><span class="pill-num">3</span><span class="pill-date">Sat 26 Dec 2026</span></a><a href="#day-4" class="day-pill"><span class="pill-num">4</span><span class="pill-date">Sun 27 Dec 2026</span></a><a href="#day-5" class="day-pill"><span class="pill-num">5</span><span class="pill-date">Mon 28 Dec 2026</span></a><a href="#day-6" class="day-pill"><span class="pill-num">6</span><span class="pill-date">Tue 29 Dec 2026</span></a><a href="#day-7" class="day-pill"><span class="pill-num">7</span><span class="pill-date">Wed 30 Dec 2026</span></a><a href="#day-8" class="day-pill"><span class="pill-num">8</span><span class="pill-date">Thu 31 Dec 2026</span></a><a href="#day-9" class="day-pill"><span class="pill-num">9</span><span class="pill-date">Fri 1 Jan 2027</span></a><a href="#day-10" class="day-pill"><span class="pill-num">10</span><span class="pill-date">Sat 2 Jan 2027</span></a><a href="#day-11" class="day-pill"><span class="pill-num">11</span><span class="pill-date">Sun 3 Jan 2027</span></a><a href="#day-12" class="day-pill"><span class="pill-num">12</span><span class="pill-date">Mon 4 Jan 2027</span></a><a href="#day-13" class="day-pill"><span class="pill-num">13</span><span class="pill-date">Tue 5 Jan 2027</span></a>
+  </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  
+    <section class="day" id="day-1">
+      <div class="day-head">
+        <span class="day-badge">Day 1</span>
+        <h2>Thu 24 Dec 2026</h2>
+        <p class="day-theme">Arrival &amp; Hobart</p>
+      </div>
+      
+      <ol class="timeline">
+        
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Land in Hobart (flight from Kuala Lumpur)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:35–15:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Immigration &amp; baggage claim</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">15:10–15:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Transfer to accommodation</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">15:40–16:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Check in &amp; settle in</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">16:30–17:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Hill Street Grocer — stock up on essentials</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">17:20–18:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Tea time at the accommodation</strong> — light meal using what's picked up from Hill Street Grocer. This is the default plan so there's no rush before Mass. <em>Alternative: a proper dinner at Cascade Brewery Bar (open to ~9pm) if you'd rather skip or shift the Mass timing.</em></div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">18:15–19:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest before Mass</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">19:45–20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to St Mary's Cathedral (only ~10 min from the accommodation)</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">20:00–20:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Settle in, find seats</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">20:30–21:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Mass at St Mary's Cathedral <span class="flag" aria-hidden="true">!</span> <em>confirm exact Christmas Eve Mass time with the parish closer to December — not yet published for 2026</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">21:30–21:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back to accommodation</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">21:50–22:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Supper — Oxtail Stew at accommodation</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">22:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-2">
+      <div class="day-head">
+        <span class="day-badge">Day 2</span>
+        <h2>Fri 25 Dec 2026</h2>
+        <p class="day-theme">Hobart (Christmas Day)</p>
+      </div>
+      <p class="day-subtitle">Most shops closed. Only go up Mount Wellington if skies are clear.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast at accommodation</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:55–8:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive up Mount Wellington</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">8:25–9:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Summit lookout &amp; photos (weather permitting)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">9:20–9:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back down toward Hobart Waterfront</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:50–11:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Hobart Waterfront — walk &amp; photos</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">11:00–11:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Royal Botanical Gardens</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">11:20–12:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Picnic lunch at the Royal Botanical Gardens</strong> — bring food from Hill Street Grocer; there are plenty of lawns and shaded spots to spread out</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">12:20–13:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Explore the Royal Botanical Gardens</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:30–13:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Long Beach, Sandy Bay</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:50–15:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Long Beach, Sandy Bay</strong> — a relaxed stretch of foreshore, good for the baby to paddle and the elderly to just sit; no set hours, so it's easy to leave whenever the group's ready</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">15:30–15:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back to accommodation</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">15:50–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest before dinner</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–19:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Christmas dinner at accommodation</strong> — Ravioli, Scallops, Blue Eye Trevalla</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">19:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <p class="day-note">If Mount Wellington's summit is clouded in, swap the early block for a slower waterfront/garden morning instead.</p>
+    </section>
+    <section class="day" id="day-3">
+      <div class="day-head">
+        <span class="day-badge">Day 3</span>
+        <h2>Sat 26 Dec 2026</h2>
+        <p class="day-theme">Hobart — Salamanca Market &amp; Family Arrival</p>
+      </div>
+      <p class="day-subtitle">Port Arthur has been cancelled as there's no time. Salamanca Market now starts at 10:30am so it doubles as breakfast/brunch and shopping in one, timed around Bryan's 9:55am arrival.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:20–9:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Head to Hobart Airport to collect your brother — meanwhile the rest of the group gets ready for a 10:30am start at Salamanca</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:40–10:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Wait - baggage claim</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:00–10:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back from the airport to Salamanca Place</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:00–10:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><em>(In parallel)</em> Rest of the group drives to Salamanca Place (~10 min from the accommodation)</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">10:30–13:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Salamanca Market</strong> — breakfast, brunch and shopping all in one, once everyone's regrouped. 300+ stalls of local produce, crafts and food (runs 8:30am–3pm)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:00–13:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back to accommodation</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">13:20–16:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time — Felicia lands 2:35pm; this window allows for airport transfer plus a relaxed settle-in before regrouping</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">16:30–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Battery Point Heritage Walk</strong> — a flat, easy stroll through Hobart's oldest residential streets, historic cottages and harbour views, a few minutes from the accommodation. No set hours, so it's easy to start whenever everyone's ready and cut it short if people are tired. <em>Alternative: Mt Nelson Signal Station lookout (short scenic drive, café, sweeping views over Hobart) if the group would rather sit down somewhere with a view — worth confirming the café's hours if you're keen on this one.</em></div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–20:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner for 11 at Mures Upper Deck</strong> (full à la carte seafood plus non-seafood options, share tables, kid-friendly dishes). Book ahead for 11</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">20:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-4">
+      <div class="day-head">
+        <span class="day-badge">Day 4</span>
+        <h2>Sun 27 Dec 2026</h2>
+        <p class="day-theme">Bruny Island Day Trip</p>
+      </div>
+      
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:55–8:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Kettering ferry terminal</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">8:45–9:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Ferry crossing to Bruny Island</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">9:25–10:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Truganini Lookout</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:15–10:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Truganini Lookout — views</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:55–11:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Bruny Island Cheese Co</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">11:55–12:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Cheese, Chocolate, Honey &amp; Berry Farm tasting</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">12:50–13:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Lunch — Get Shucked oysters <em>(everyone together)</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:50–14:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Adventure Bay — <strong>group splits here for the hike only; meals and everything else stay together as planned</strong></div>
+        </li>
+        <li class="tl-item tl-split">
+          <div class="tl-time">14:20–16:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Hikers:</strong> Fluted Cape hike (2.5 hrs return, starts at Adventure Bay) — <strong>Elderly + rest of the group:</strong> continue on to Cape Bruny Lighthouse and Mavista Rainforest Walk at an easy pace</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">16:10–16:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Regroup at Adventure Bay / Bruny Island Cheese Co</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">16:30–17:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to ferry terminal <em>(Grass Point dropped to keep the day on schedule after the split — easy to swap back in if the hike finishes early)</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">17:00–17:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Ferry back to mainland</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">17:40–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back to Hobart, freshen up</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">19:00 onward</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Taste of Summer Tasmania</strong> — Princes Wharf 1, Hobart waterfront. Gates open from 12pm; entry is free after 8:30pm most nights (worth double-checking closer to the date). Stalls from 75+ Tasmanian food, wine, cider and spirit producers — casual, walk-around dining, with tables/chairs set aside for anyone with limited mobility.</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">~21:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Return to accommodation</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-5">
+      <div class="day-head">
+        <span class="day-badge">Day 5</span>
+        <h2>Mon 28 Dec 2026</h2>
+        <p class="day-theme">Hobart → Bicheno (East Coast)</p>
+      </div>
+      <p class="day-subtitle">Later checkout today (~9:30am) so IZ and Kana can be dropped at Hobart Airport for their ~10am flight before the rest of the group continues on to Richmond.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–9:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast, pack up — relaxed morning given the later checkout</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">9:00–9:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Final packing, check out</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">9:30–10:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Hobart Airport, farewell IZ &amp; Kana</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:00–10:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive from the airport to Richmond (~25 min — it's on the way, no need to backtrack through the city)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:30–11:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Richmond historic town — walk &amp; photos</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">11:40–13:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Swansea (Bark Mill Café)</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">13:00–13:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Lunch at Swansea Bark Mill Café</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:40–14:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Kate's Berry Farm</strong> — closes 4pm, so visited here while still in Swansea (it's right on the south side of town, no separate drive needed)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:00–14:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Spiky Bridge photo stop</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">14:30–15:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Freycinet Marine Farm</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:15–15:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Freycinet Marine Farm</strong> — fresh oysters (open daily 9am–4pm, so this is timed to finish just before close — worth not lingering elsewhere beforehand)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:55–16:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Honeymoon Bay — easy walk/lookout</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">16:35–17:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Bicheno &amp; check in</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">17:05–18:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / settle in</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:00–19:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner at Sealife Bicheno</strong> (moved here from the 29th, since it's closed Tuesdays — dinner service runs 5–8pm, so starting at 6pm keeps things unhurried)</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">19:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <p class="day-note">Kate's Berry Farm and Freycinet Marine Farm both close at 4pm. Since Bicheno is self-contained, grab breakfast basics (bread, milk, eggs) at Morris' General Store in Swansea (near the Bark Mill Café) or at a supermarket/IGA in Bicheno on arrival.</p>
+    </section>
+    <section class="day" id="day-6">
+      <div class="day-head">
+        <span class="day-badge">Day 6</span>
+        <h2>Tue 29 Dec 2026</h2>
+        <p class="day-theme">Bicheno &amp; Freycinet National Park</p>
+      </div>
+      <p class="day-subtitle">Wineglass Bay lookout is ~2hrs return; the full walk down to the beach is ~3.5hrs return.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-rest">
+          <div class="tl-time">7:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Wake up</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:30–8:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Breakfast at accommodation</strong></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">8:25–9:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Cape Tourville</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:05–9:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Cape Tourville — pram/wheelchair-friendly boardwalk &amp; lighthouse views</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">9:55–10:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Wineglass Bay lookout car park</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:35–12:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Wineglass Bay Lookout walk (up and back — turn around at your own pace)</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">12:15–13:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Picnic lunch at the lookout car park / nearby beach</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:15–14:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Freycinet National Park — coastal beaches, easy walking</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">14:20–14:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Bicheno</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:50–15:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Bicheno Blowhole &amp; foreshore — short, easy walk out to see the blowhole in action (best around mid-to-high tide)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:40–17:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>The Lobster Shack</strong> — waterfront, Tasmanian rock lobster, seafood platters and the famous lobster roll</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">17:00–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Bicheno Foreshore Footway</strong> — easy, flat coastal walking track through town, good for photos and stretching legs before dinner</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner at Food 'n' Brew Co</strong>. Casual, woodfired pizzas and burgers, easy for a group.</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <div class="callout"><p><strong><span class="boot" aria-hidden="true">Hike</span> Splitting the group — Wineglass Bay Beach option:</strong> at the lookout car park (10:35), the group could split: the elderly and the rest of you do the lookout only (~2hrs return, as scheduled above) and head to Bicheno for Lobster Shack, while cousins continue down to the beach itself (~3.5hrs return total). Treat the rest of the afternoon as flexible depending on when the beach hikers are back.</p></div>
+    </section>
+    <section class="day" id="day-7">
+      <div class="day-head">
+        <span class="day-badge">Day 7</span>
+        <h2>Wed 30 Dec 2026</h2>
+        <p class="day-theme">Bicheno → Launceston (via Coast Road)</p>
+      </div>
+      <p class="day-subtitle">Longest driving day — multiple stops break it up.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast, check out</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:55–9:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Bay of Fires</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:35–10:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Bay of Fires — photo stops, orange lichen rocks</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:15–10:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to St Helens</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:45–11:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Arrive St Helens, wait for Lease 65 to open</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">11:00–12:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Lease 65</strong> — self-shucked oysters, doubling as lunch today (open Mon–Fri 11am–3pm only, so this is timed to its opening)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">12:00–13:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Bridestowe Lavender Farm</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:30–14:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Bridestowe Lavender Farm</strong> — walk &amp; lavender ice cream (open daily 10am–3pm, so this is prioritised over an extra Bay of Fires stop to make sure you're in before close)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">14:30–15:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Tamar Island Wetlands Reserve</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:20–16:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Tamar Island Wetlands Reserve</strong> — an easy, wheelchair/pram-friendly boardwalk through the wetlands with a bird hide and lagoon views, 10 min from Launceston; free entry, open dawn to dusk</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">16:20–17:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Launceston &amp; check in</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">17:00–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Dinner at Black Cow Bistro (open 5–10:30pm) <span class="flag" aria-hidden="true">!</span> <em>book ahead</em></div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <p class="day-note">The second Bay of Fires stop (Binalong Bay/The Gardens) has been dropped today — with Bridestowe's 3pm close and Lease 65 only opening at 11am.</p>
+    </section>
+    <section class="day" id="day-8">
+      <div class="day-head">
+        <span class="day-badge">Day 8</span>
+        <h2>Thu 31 Dec 2026</h2>
+        <p class="day-theme">Launceston &amp; Tamar Valley</p>
+      </div>
+      <p class="day-subtitle">Chairlift at Cataract Gorge runs 9am–4:30pm.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:55–8:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive/walk to Cataract Gorge</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">8:25–10:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Cataract Gorge — Gorge Scenic Reserve, chairlift, First Basin Track (pram-friendly section)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:10–10:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Ashgrove Dairy Door — tastings (open daily 8:30am–5pm)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:50–11:40</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Platypus House, Beauty Point (~40 min) - might change to something else</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">11:40–12:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Platypus House guided tour</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">12:35–13:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Lunch at Grindelwald Bakery Café / Alpenrose Bistro</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:35–14:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Swiss Village Grindelwald — shops, ice creamery (this is also where the Van Diemens Land Creamery scoop shop is)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">14:45–15:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back to Launceston, freshen up</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">15:25–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest before New Year's Eve dinner</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–20:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>New Year's Eve dinner at Blue Social Eatery</strong> — casual, flexible group seating, Tasmanian produce, dinner menu includes ribs, lamb and firepit dishes.</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">20:10 onward</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Optional: NYE celebrations, or head back to rest before midnight — pizza for supper sorted separately</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-9">
+      <div class="day-head">
+        <span class="day-badge">Day 9</span>
+        <h2>Fri 1 Jan 2027</h2>
+        <p class="day-theme">Launceston → Cradle Mountain (via Elizabeth Town &amp; Deloraine)</p>
+      </div>
+      <p class="day-subtitle">Christmas Hills Raspberry Farm Cafe is on this route and open 7am–5pm daily.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:30–8:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast, check out <em>(later start after NYE)</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">8:25–9:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Christmas Hills Raspberry Farm, Elizabeth Town</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">9:20–10:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Christmas Hills Raspberry Farm Cafe — brunch</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:30–11:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Deloraine</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">11:10–11:50</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Deloraine Deli</strong> (open 8am–3:30pm) — good spot to stock up on breakfast/lunch basics for your Discovery Park cabin, since you'll be self-catering breakfast and packing lunch tomorrow</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">11:50–13:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Cradle Mountain</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:30–14:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Check in — Discovery Parks cabin</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:00–14:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Enchanted Walk (mostly pram-friendly)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:55–15:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">King Billy Walk</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:55–16:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Pencil Pine Falls</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">16:35–17:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Boat Shed viewpoint (Dove Lake)</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">17:15–18:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time at the cabin — relax, there's genuinely not much else open out here in the evening</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:15–19:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner at Hellyers Restaurant</strong> — on-site at Discovery Parks, so no drive needed. Books out early most nights, so reserve as soon as you can. <em>(Note: dinner service runs 5–7:30pm, last seating 7:30 — a 6:15pm start keeps things comfortable within that window.)</em></div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">19:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <div class="callout"><p><strong><span class="boot" aria-hidden="true">Hike</span> Splitting the group — Crater Lake option:</strong> after check-in (14:00), the group could split: cousin + nephew hike Crater Lake (2 hrs return, ~14:00–16:10), while the elderly and the rest of you do the gentler Enchanted Walk and Pencil Pine Falls at a relaxed pace over the same window. Everyone naturally lines back up by ~16:10–16:35 to head to the Boat Shed viewpoint together (or straight to the cabin if the day's been long enough).</p></div>
+    </section>
+    <section class="day" id="day-10">
+      <div class="day-head">
+        <span class="day-badge">Day 10</span>
+        <h2>Sat 2 Jan 2027</h2>
+        <p class="day-theme">Cradle Mountain</p>
+      </div>
+      <p class="day-subtitle">Shuttle bus only — no self-driving today. Confirm the day's timetable at the visitor centre.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Breakfast at the cabin</strong> — self-catered from what you picked up at Deloraine Deli, since Discovery Park's own dining (Hellyers/Wilderness Lounge) doesn't open until 8:30am and you'll want the early start for Dove Lake. <em>Alternative: push the start to 8:30–9am and grab coffee/pastries at the Wilderness Lounge instead, if a slower morning suits better.</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:45–8:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Shuttle to Dove Lake</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">8:15–10:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Dove Lake Circuit — pram-friendly sections, photo stops</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:15–11:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Lake Lilla (short walk, carrier recommended for little ones)</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">11:25–12:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Picnic lunch by the lake</strong> — self-packed, using supplies from Deloraine Deli (there's no restaurant out at Dove Lake at lunchtime)</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">12:25–13:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Glacier Rock lookout</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:35–14:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Shuttle back toward Marion's Lookout trailhead — <strong>group splits here</strong></div>
+        </li>
+        <li class="tl-item tl-split">
+          <div class="tl-time">14:05–15:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong><span class="boot" aria-hidden="true">Hike</span></strong> Marion's Lookout (steeper climb, best views in the park) — <strong>Elderly + rest of the group:</strong> free time at the visitor centre / gentle wander near Ronny Creek</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">15:30–16:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Shuttle back to the cabin</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">16:00–18:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:15–19:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Dinner at Tavern Bar &amp; Bistro</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">19:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest</div>
+        </li>
+      </ol>
+      <p class="day-note">Pack layers — weather at Cradle Mountain changes fast even in January.</p><div class="callout"><p><strong><span class="boot" aria-hidden="true">Hike</span> If hikers want a bigger day:</strong> Cradle Mountain Summit (8 hrs return) is the serious option, but it would take up essentially the whole day and doesn't fit alongside Dove Lake Circuit and the rest of Day 10. If they're keen, it'd work better as a full dedicated day — for example, swapping it in for Day 9's drive day isn't possible since that's a travel day, but it's worth considering if you ever add a spare day at Cradle Mountain in a future trip, or if the group is happy to split for the <em>entire</em> Day 10 rather than just the Marion's Lookout window (elderly do Dove Lake Circuit + Lake Lilla + Glacier Rock at their own pace across the day, hikers do the Summit and rejoin for dinner).</p></div>
+    </section>
+    <section class="day" id="day-11">
+      <div class="day-head">
+        <span class="day-badge">Day 11</span>
+        <h2>Sun 3 Jan 2027</h2>
+        <p class="day-theme">Cradle Mountain → Strahan (via Queenstown)</p>
+      </div>
+      
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">8:00–8:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast, check out <em>(relaxed morning)</em></div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">8:55–10:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Queenstown</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">10:35–11:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Queenstown — a quick look at the town's stark, mining-scarred orange hills, and the Galley Museum if it's open</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">11:25–12:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Strahan</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">12:25–12:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Check in</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">12:55–14:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Lunch at Hamer's Bar &amp; Bistro</strong> — open daily 7am–8pm, works fine for lunch too</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">14:05–15:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Hogarth Falls (50-min walk)</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">15:05–15:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Henty Dunes</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:55–16:45</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Henty Dunes — walk, photos</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">16:45–17:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Spion Kop lookout</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">17:35–18:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive back, freshen up</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:30–20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner at Hamer's Bar &amp; Bistro</strong> — casual waterfront pub-bistro (blue eye trevalla, salmon, steak, veg options), Strahan's most popular local spot. Open daily 7am–8pm.</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">20:00</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Wildlife viewing / relax at lodge</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-12">
+      <div class="day-head">
+        <span class="day-badge">Day 12</span>
+        <h2>Mon 4 Jan 2027</h2>
+        <p class="day-theme">Strahan → Hobart (via A10)</p>
+      </div>
+      <p class="day-subtitle">Longest single drive of the trip — spaced out with stops.</p>
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">7:00–7:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Breakfast at The Coffee Shack, Strahan waterfront</strong> Right across from the wharf. Worth calling ahead or splitting into two smaller tables given the group size, since it's a cosy little spot. Check out beforehand.</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">7:55–9:35</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive toward Lake St Clair</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">9:35–10:25</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Lake St Clair — lakeside walk, photos</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:25–12:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive on toward Derwent Bridge</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">12:05–13:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Lunch at Hungry Wombat Café, Derwent Bridge</strong> — the well-known roadside stop right by the Lyell Highway, 5 minutes from Lake St Clair; burgers, soup, coffee, plus fuel and toilets</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">13:05–13:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Russell Falls walk</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">13:55–15:05</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Drive to Hobart</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">15:05–15:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Arrive Hobart, check in</div>
+        </li>
+        <li class="tl-item tl-activity">
+          <div class="tl-time">15:30–16:10</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Hill Street Grocer — stock up for a relaxed final evening</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">16:10–18:15</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free time / rest after a long drive day</div>
+        </li>
+        <li class="tl-item tl-meal">
+          <div class="tl-time">18:15–19:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content"><strong>Dinner at Cascade Brewery or Bierhalle</strong>.</div>
+        </li>
+        <li class="tl-item tl-rest">
+          <div class="tl-time">19:30</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Rest and repack</div>
+        </li>
+      </ol>
+      
+    </section>
+    <section class="day" id="day-13">
+      <div class="day-head">
+        <span class="day-badge">Day 13</span>
+        <h2>Tue 5 Jan 2027</h2>
+        <p class="day-theme">Hobart → Kuala Lumpur</p>
+      </div>
+      
+      <ol class="timeline">
+        
+        <li class="tl-item tl-meal">
+          <div class="tl-time">8:30–9:55</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Breakfast, final packing</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:00–10:20</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Check out, transfer to Hobart Airport</div>
+        </li>
+        <li class="tl-item tl-transit">
+          <div class="tl-time">10:30 onward</div>
+          <div class="tl-marker" aria-hidden="true"><span class="tl-dot"></span></div>
+          <div class="tl-content">Free and Easy</div>
+        </li>
+      </ol>
+      
+    </section>
+
+  <div class="footer-section">
+    <h3>General notes</h3>
+    <ul>
+      <li><strong>Optional hikes left out of the core schedule</strong> (for anyone in the group wanting extra activity): Cape Hauy (4hrs return), Cape Raoul (5hrs return), Fluted Cape (2.5hrs), Cradle Summit (8hrs), Crater Lake (2hrs), Marion's Lookout (full loop).</li><li>Days with shuttle-only access (Cradle Mountain, Day 10) or ferry crossings (Bruny Island, Day 4) have less flexibility on timing — double-check current shuttle/ferry schedules closer to the trip.</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
